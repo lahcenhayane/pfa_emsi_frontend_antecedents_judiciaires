@@ -1,0 +1,16 @@
+.login{
+    background-color: #eee;
+    height: 100vh;
+}
+.sizeForm{
+    margin-top: 100px;
+    box-shadow: 1px 1px 10px gray;
+}
+.bg-gray{
+    background-color: #ddd;   
+}
+
+.titleLogin{
+    border-bottom: 2px solid #cac9c9;
+    text-align: center;
+}

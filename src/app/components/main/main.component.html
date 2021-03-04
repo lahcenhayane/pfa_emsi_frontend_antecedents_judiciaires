@@ -1,0 +1,47 @@
+<div class="main">
+    <!-- Slide Bar -->
+    <div class="sideBar">
+        <div class="sideBar__title">
+            <h3>Lahcen Hayane</h3>
+            <p>Admin</p>
+        </div>
+        <div class="sideBar__menu">
+            <div class="sideBar__menu__item">
+                <a routerLink="/home">Accuiel</a>
+            </div>
+            <div class="sideBar__menu__item">
+                <a href="/users">Gestion d'utilisateur</a>
+            </div>
+            <div class="sideBar__menu__item">
+                <a href="/crimenal">Gection Crimenal</a>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav class="content__navbar">
+            <div class="content__navbar__left">
+                <div class="content__navbar__item">
+                    <button type="button" class="btn__menu" ><img class="size__menu" src="../../../assets/images/icons/menu.png"></button>
+                </div>
+            </div>
+            <div class="content__navbar__right">
+                <div class="content__navbar__item">
+                    <a href="#">Notification<span>(10)</span></a>
+                </div>
+                <div class="content__navbar__item">
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+            
+        </nav>
+
+        <!-- Main -->
+        <div class="content__main">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
