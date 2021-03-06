@@ -4,6 +4,7 @@ a{
 .home{
     display: flex;
     flex: 1;
+    flex-direction: column;
 }
 .home__row{
     display: flex;
@@ -51,4 +52,24 @@ a{
 }
 .home__row__item__body > p:last-child{
     font-size: 20px;
+}
+
+.info{
+    padding: 10px;
+}
+.info__table{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #aaa;
+}
+.info__table__header{
+    display: flex;
+    justify-content: center;
+    background-color: #ccc;
+    padding: 10px;
+    font-size: 20px;
+    color: #007bff;
+}
+.info__table > table .point{
+    font-weight: 800;
 }
