@@ -3,10 +3,10 @@
         <div class="user__all__header">
             <h3>Les utilisateurs</h3>
             <div class="user__all__header__search">
-                <input class="user__all__header__search__input" type="text" name="search" placeholder="Recherche par email">
-                <button class="user__all__header__search__btn">Recherche</button>
+                <input (keyup)="searchUsers()" [(ngModel)]="search" class="user__all__header__search__input" type="text" name="search" placeholder="Recherche par email">
+                <!-- <button  class="user__all__header__search__btn">Recherche</button> -->
             </div>
-            <button class="btn-sm btn btn-secondary" (click)="showAjouter()" data-toggle="modal" data-target="#ModalAjouter">Ajouter</button>
+            <a class="btn-sm btn btn-secondary"  routerLink="/users/add">Ajouter</a>
         </div>
         <div class="user__all__body">
             <table class="table">
@@ -21,89 +21,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Lahcen Hayane</td>
-                        <td>Lahcenhayane@gmail.com</td>
-                        <td>Rabat</td>
-                        <td>0634562398</td>
-                        <td>Admin</td>
+                    <tr *ngFor="let user of usersSearch">
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.ville }}</td>
+                        <td>{{ user.tel }}</td>
+                        <td>{{ user.role }}</td>
                         <td>
-                            <button class="btn btn-sm btn-info">Afficher</button>
-                            <button class="mx-1 btn btn-sm btn-primary" (click)="edit()" data-toggle="modal" data-target="#ModalAjouter">Modifier</button>
-                            <button class="btn btn-sm btn-danger">Supprimer</button>
+                            <a class="btn btn-sm btn-info" routerLink="/users/show/{{user.id}}" >Afficher</a>
+                            <a class="btn btn-sm btn-primary mx-1" routerLink="/users/edit/{{user.id}}" >Modifier</a>
+                            <button class="btn btn-sm btn-danger" (click)="deleteUser(user.id)">Supprimer</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="ModalAjouter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 *ngIf="!showEdit" class="modal-title" id="exampleModalLabel">Ajouter un utilisateur.</h5>
-                    <h5 *ngIf="showEdit" class="modal-title" id="exampleModalLabel">Modifier un utilisateur.</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <form class="modal-body-form" action="">
-                        <div class="modal-body__one">
-                            <div class="form-group">
-                                <label for="name">Nom Prenom</label>
-                                <input type="text" name="name" class="form-control" placeholder="Nom Prenom" aria-describedby="helpId">
-                                <small id="helpId" class="text-muted">Help text</small>
-                              </div>
-                              <div class="form-group">
-                                  <label for="email">Email</label>
-                                  <input type="email" name="email" class="form-control" placeholder="Email" aria-describedby="helpId">
-                                  <small id="helpId" class="text-muted">Help text</small>
-                              </div>
-                              <div class="form-group">
-                                  <label for="password" *ngIf="!showEdit">Mot de passe</label>
-                                  <label for="password" *ngIf="showEdit">Nouveau Mot de passe</label>
-                                  <input type="password" name="password" class="form-control" placeholder="Mot de passe" aria-describedby="helpId">
-                                  <small id="helpId" class="text-muted">Help text</small>
-                              </div>
-                              <div class="form-group" *ngIf="!showEdit">
-                                <label for="role">Role</label>
-                                <select class="form-control" name="role">
-                                    <option>Selectionner Votre Role</option>
-                                    <option>Criminal</option>
-                                    <option>Tribunale</option>
-                                </select>
-                              </div>
-                        </div>
-                        <div class="modal-body__two">
-                            <div class="form-group">
-                                <label for="tel">Telephone</label>
-                                <input type="text" name="tel" class="form-control" placeholder="Telephone" aria-describedby="helpId">
-                                <small id="helpId" class="text-muted">Help text</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="ville">Ville</label>
-                                <input type="text" name="ville" class="form-control" placeholder="Ville" aria-describedby="helpId">
-                                <small id="helpId" class="text-muted">Help text</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="confirmerPassword">Confirmer le mot de passe</label>
-                                <input type="password" name="confirmerPassword" class="form-control" placeholder="Confirmer le mot de passe" aria-describedby="helpId">
-                                <small id="helpId" class="text-muted">Help text</small>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                <button type="button" class="btn btn-primary" *ngIf="!showEdit">Ajouter</button>
-                <button type="button" *ngIf="showEdit" class="btn btn-primary">Modifier</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>

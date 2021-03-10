@@ -1,1 +1,42 @@
-<p>criminal works!</p>
+<div class="user">
+    <div class="user__all">
+        <div class="user__all__header">
+            <h3>Les criminals</h3>
+            <div class="user__all__header__search">
+                <input class="user__all__header__search__input" type="text" name="search" placeholder="Rechercher par CIN">
+                <button class="user__all__header__search__btn">Recherche</button>
+            </div>
+            <a class="btn-sm btn btn-secondary" routerLink="/criminal/add">Ajouter</a>
+        </div>
+        <div class="user__all__body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>CIN</th>
+                        <th>Nom et Prenom</th>
+                        <th>Ville</th>
+                        <th>Telephone</th>
+                        <th>Sexe</th>
+                        <th>Date Naissance</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ciminal of criminals">
+                        <td>{{ ciminal.cin }}</td>
+                        <td>{{ ciminal.nom }} {{ ciminal.prenom }}</td>
+                        <td>{{ ciminal.ville }}</td>
+                        <td>{{ ciminal.tel }}</td>
+                        <td>{{ ciminal.sexe }}</td>
+                        <td>{{ ciminal.dateNaissance }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-info" (click)="show(ciminal.id)">Afficher</button>
+                            <a class="mx-1 btn btn-sm btn-primary" routerLink="/criminal/edit/{{ciminal.id}}">Modifier</a>
+                            <button class="btn btn-sm btn-danger" (click)="delete(ciminal.id)">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<!-- info Of User -->
+<div class="info">
+    <div class="info__table">
+        <div class="info__table__header">
+            Les informations
+        </div>
+        <table class="table">
+            <input type="hidden" value="{{ user.id }}" [(ngModel)]="user.id">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td><input type="text" name="name" class="form-control" value="{{ user.name }}" [(ngModel)]="user.name"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><input type="email" name="email" class="form-control" value="{{ user.email }}" [(ngModel)]="user.email"></td>
+                </tr>
+                <tr>
+                    <th>Ville</th>
+                    <td><input type="text" name="ville" class="form-control" value="{{ user.ville }}" [(ngModel)]="user.ville"></td>
+                </tr>
+                <tr>
+                    <th>Telephone</th>
+                    <td><input type="text" name="tel" class="form-control" value="{{ user.tel }}" [(ngModel)]="user.tel"></td>
+                </tr>
+                <tr>
+                    <th>Mot de passe</th>
+                    <td><input type="password" name="password" class="form-control" value="" [(ngModel)]="user.password"></td>
+                </tr>
+                <tr>
+                    <th>Role</th>
+                    <td>
+                        <select [(ngModel)]="user.role" class="form-control" name="role">
+                            <option value="GP">GP</option>
+                            <option value="Tribunal">Tribunal</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="info__table__footer">
+            <button (click)="modifierUser()" class="btn btn-info" type="button">Modifier</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+.user{
+    padding: 10px;
+}
+.user__all{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #aaa;
+}
+.user__all__header{
+    display: flex;
+    flex: 1;
+    background-color: #ccc;
+    padding: 6px;
+    justify-content: space-between;
+}
+.user__all__header > h3{
+    color:rgb(70, 69, 69);
+    font-size: 22px;  
+}
+
+.user__all__body{
+    padding: 0px 3px;
+}
+
+.user__all__header__search{
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+}
+.user__all__header__search__input{
+    outline: none;
+    border: none;
+    padding: 0px 4px;
+    width: 300px;
+}
+.user__all__header__search__btn{
+    border: none;
+    outline: none;
+    padding: 2px 8px;
+    background-color: #eee;
+    color: black;
+}
+.user__all__header__search__btn:hover{
+    background-color: #aaa;
+    color: white;
+}
+.modal-content{
+    height: 600px !important;
+    overflow-y: scroll;
+}
+.modal-dialog{
+    max-width: 60% !important;
+}
+.modal-body-form{
+    display: flex;
+}
+.modal-body__one,
+.modal-body__two{
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    padding: 10px;
+}

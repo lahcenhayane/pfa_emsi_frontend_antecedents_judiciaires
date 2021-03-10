@@ -1,0 +1,60 @@
+<div class="add__user">
+    <div class="crime__fichier">
+        <div class="crime__fichier__title">
+            Ajouter l'utilisateur.
+        </div>
+        <div class="crime__fichier__header py-5">
+            <!-- <div class="crime__fichier__header__two">
+                <div class="form-group imgg">
+                    <img class="logo_user_default" [src]="urlImage" alt="Logo User">
+                    <input type="file" (change)="changeImage($event)" name="photo" class="form-control logo_user_default1">
+                </div>
+            </div> -->
+            <div class="crime__fichier__header__one">
+                <div class="form-group">
+                    <label for="cin">CIN</label>
+                    <input type="text" [(ngModel)]="criminals.cin" name="text" class="form-control" placeholder="cin">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" [(ngModel)]="criminals.nom" name="nom" class="form-control" placeholder="Nom">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prenom</label>
+                    <input type="text" [(ngModel)]="criminals.prenom" name="prenom" class="form-control" placeholder="Prenom">
+                    
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="criminals.sexe" type="radio" id="checkHomme" name="sexe" value="Homme" checked>
+                    <label class="form-check-label" for="checkHomme">Homme</label>
+                </div>
+                
+            </div>
+            <div class="crime__fichier__header__two">
+                <div class="form-group">
+                    <label for="tel">Telephone</label>
+                    <input type="text" [(ngModel)]="criminals.tel" name="tel" class="form-control" placeholder="Telephone" aria-describedby="helpId">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="ville">ville</label>
+                    <input type="text" [(ngModel)]="criminals.ville" name="ville" class="form-control" placeholder="Ville" aria-describedby="helpId">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="dateNaissance">Date Naissance</label>
+                    <input type="text" [(ngModel)]="criminals.dateNaissance" name="dateNaissance" class="form-control" placeholder="yyyy/mm/dd">
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" [(ngModel)]="criminals.sexe" id="checkFemme" type="radio" name="sexe" value="Femme">
+                    <label class="form-check-label" for="checkFemme">Femme</label>
+                </div>
+            </div>
+        </div>
+        <div class="crime__fichier__header__footer">
+            <button type="button" (click)="addCriminal()" class="btn btn-secondary">Ajouter</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="add__user">
+    <div class="crime__fichier">
+        <div class="crime__fichier__title">
+            Ajouter l'utilisateur.
+        </div>
+        <div class="crime__fichier__header">
+            <div class="crime__fichier__header__one">
+                <div class="form-group">
+                    <label for="name">Nom Prenom</label>
+                    <input [(ngModel)]="user.name" type="text" name="name" class="form-control" placeholder="Nom Prenom" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted">Help text</small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input [(ngModel)]="user.email" type="email" name="email" class="form-control" placeholder="Email" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted">Help text</small>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input [(ngModel)]="user.password" type="password" name="password" class="form-control" placeholder="Mot de passe" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted">Help text</small>
+                </div>
+                
+            </div>
+            <div class="crime__fichier__header__two">
+                <div class="form-group">
+                    <label for="tel">Telephone</label>
+                    <input [(ngModel)]="user.tel" type="text" name="tel" class="form-control" placeholder="Telephone" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted">Help text</small>
+                </div>
+                <div class="form-group">
+                    <label for="ville">Ville</label>
+                    <input [(ngModel)]="user.ville" type="text" name="ville" class="form-control" placeholder="Ville" aria-describedby="helpId">
+                    <small id="helpId" class="text-muted">Help text</small>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select [(ngModel)]="user.role" class="form-control" name="role">
+                        <option value="">Selectionner Votre Role</option>
+                        <option value="GP">GP</option>
+                        <option value="Tribunal">Tribunal</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="crime__fichier__header__footer">
+            <button type="button" class="btn btn-secondary" (click)="addUser()">Ajouter</button>
+        </div>
+    </div>
+</div>

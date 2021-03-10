@@ -6,7 +6,7 @@
             </div>
             <div class="home__row__item__body">
                 <p><a href="#">Service GP</a></p>
-                <p>34</p>
+                <p>{{ countGP }}</p>
             </div>
         </div>
         <div class="home__row__item bg__two">
@@ -15,7 +15,7 @@
             </div>
             <div class="home__row__item__body">
                 <p><a href="#">Service Tribunale </a></p>
-                <p>34</p>
+                <p>{{ countTribunal }}</p>
             </div>
         </div>
         <div class="home__row__item bg__one">
@@ -24,7 +24,7 @@
             </div>
             <div class="home__row__item__body">
                 <p><a href="#">Service Criminal</a></p>
-                <p>34</p>
+                <p>{{countCriminal}}</p>
             </div>
         </div>
         <div class="home__row__item bg__two">
@@ -32,8 +32,8 @@
                 <img src="../../../../assets/images/logos/users.png" alt="Logo">
             </div>
             <div class="home__row__item__body">
-                <p><a href="#">Gestion Utilisateurs</a></p>
-                <p>34</p>
+                <p><a routerLink="/users">Gestion Utilisateurs</a></p>
+                <p>{{ countUsers }}</p>
             </div>
         </div>
     </div>
@@ -48,23 +48,23 @@
                 <tbody>
                     <tr>
                         <th>Name</th>
-                        <td><span class="point">:</span>Lahcen Hayane</td>
+                        <td><span class="point">:</span>{{user.name}}</td>
                     </tr>
                     <tr>
                         <th>Email</th>
-                        <td><span class="point">:</span>Lahcenhayane@gmail.com</td>
+                        <td><span class="point">:</span>{{user.email}}</td>
                     </tr>
                     <tr>
                         <th>Ville</th>
-                        <td><span class="point">:</span>Rabat</td>
+                        <td><span class="point">:</span>{{user.ville}}</td>
                     </tr>
                     <tr>
                         <th>Telephone</th>
-                        <td><span class="point">:</span>063563213</td>
+                        <td><span class="point">:</span>{{user.tel}}</td>
                     </tr>
                     <tr>
                         <th>Role</th>
-                        <td><span class="point">:</span> Admin</td>
+                        <td><span class="point">:</span> {{user.role}}</td>
                     </tr>
                 </tbody>
             </table>

@@ -1,5 +1,5 @@
 .login{
-    background-color: #eee;
+    
     height: 100vh;
 }
 .sizeForm{
@@ -7,7 +7,7 @@
     box-shadow: 1px 1px 10px gray;
 }
 .bg-gray{
-    background-color: #ddd;   
+    background-color: rgb(240, 238, 238);   
 }
 
 .titleLogin{
