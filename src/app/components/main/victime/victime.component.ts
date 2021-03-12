@@ -1,18 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Criminal } from 'src/app/models/criminal';
-import { AccountService } from 'src/app/services/account.service';
-import { CriminalService } from 'src/app/services/criminal.service';
+import { VictimeService } from 'src/app/services/victime.service';
 
 @Component({
-  selector: 'app-criminal',
-  templateUrl: './criminal.component.html',
-  styleUrls: ['./criminal.component.css']
+  selector: 'app-victime',
+  templateUrl: './victime.component.html',
+  styleUrls: ['./victime.component.css']
 })
-export class CriminalComponent implements OnInit {
+export class VictimeComponent implements OnInit {
 
-  constructor(private criminalService:CriminalService, private account:AccountService) { }
-
-  role =  this.account.getRole();
+  constructor(private victimeService:VictimeService) { }
 
   criminals:Criminal[]=[];
   search:any;
@@ -29,14 +26,14 @@ export class CriminalComponent implements OnInit {
     this.showEdit = false;
   }
   getCirminal(){
-    this.criminalService.getCriminal().subscribe(
+    this.victimeService.getCriminal().subscribe(
       res => { this.searchCriminals = this.criminals = res },
       err => { console.log(err) }
     )
   }
 
   delete(id){
-    this.criminalService.deleteCrimila(id).subscribe(
+    this.victimeService.deleteCrimila(id).subscribe(
       (_) => { this.searchCriminals = this.criminals = this.criminals.filter(row => row.id != id);},
       err => { console.log(err);}
     )

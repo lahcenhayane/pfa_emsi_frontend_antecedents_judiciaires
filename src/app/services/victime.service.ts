@@ -6,27 +6,28 @@ import { Criminal } from '../models/criminal';
 @Injectable({
   providedIn: 'root'
 })
-export class CriminalService {
+export class VictimeService {
 
   constructor(private http:HttpClient) { }
 
   getCriminal(){
-    return this.http.get<Criminal[]>(`${environment.url}/criminals`);
+    return this.http.get<Criminal[]>(`${environment.url}/victime`);
   }
 
   addCriminal(data){
-    return this.http.post(`${environment.url}/criminals`, data);
+    return this.http.post(`${environment.url}/victime`, data);
   }
 
   deleteCrimila(id){
-    return this.http.delete(`${environment.url}/criminals/${id}`);
+    return this.http.delete(`${environment.url}/victime/${id}`);
   }
 
   modifierCriminal(data){
-    return this.http.put(`${environment.url}/criminals/modifier`, data);
+    return this.http.put(`${environment.url}/victime/modifier`, data);
   }
 
   findCriminal(id){
-    return this.http.get<Criminal>(`${environment.url}/criminals/find/${id}`);
+    return this.http.get<Criminal>(`${environment.url}/victime/find/${id}`);
   }
+
 }

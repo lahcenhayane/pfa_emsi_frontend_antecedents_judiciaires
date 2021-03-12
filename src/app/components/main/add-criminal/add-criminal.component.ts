@@ -14,10 +14,11 @@ export class AddCriminalComponent implements OnInit {
     cin:"",
     nom:"",
     prenom:"",
+    addresse:"",
     sexe:"Homme",
     dateNaissance:"",
     ville:"",
-    te:""
+    tel:""
   }
   
   constructor(private criminalService:CriminalService, private router:Router) { }

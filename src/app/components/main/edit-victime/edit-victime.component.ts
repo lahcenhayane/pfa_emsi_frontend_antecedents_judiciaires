@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CriminalService } from 'src/app/services/criminal.service';
+import { VictimeService } from 'src/app/services/victime.service';
 
 @Component({
-  selector: 'app-edit-criminal',
-  templateUrl: './edit-criminal.component.html',
-  styleUrls: ['./edit-criminal.component.css']
+  selector: 'app-edit-victime',
+  templateUrl: './edit-victime.component.html',
+  styleUrls: ['./edit-victime.component.css']
 })
-export class EditCriminalComponent implements OnInit {
+export class EditVictimeComponent implements OnInit {
 
-  constructor(private criminilService:CriminalService, private router:Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private victimeService:VictimeService, private router:Router, private activatedRoute: ActivatedRoute) { }
 
   criminal:any={
     id:"",
@@ -29,18 +29,19 @@ export class EditCriminalComponent implements OnInit {
   }
 
   getCriminal(){
-    this.criminilService.findCriminal(this.id).subscribe(
+    this.victimeService.findCriminal(this.id).subscribe(
       res=>this.criminal = res,
       err => console.log(err)
     )
   }
 
   Modifier(){
-    this.criminilService.modifierCriminal(this.criminal).subscribe(
+    this.victimeService.modifierCriminal(this.criminal).subscribe(
       (_) => {
-        this.router.navigate(['/criminal'])
+        this.router.navigate(['/victime'])
       },
       err => console.log(err)
     )
   }
+
 }

@@ -16,7 +16,8 @@ export class HomeComponent implements OnInit {
   countCriminal:number=0;
   
   user:User={
-    name:"",
+    nom:"",
+    adresse:"",
     email:"",
     password:"",
     ville:"",

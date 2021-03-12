@@ -1,12 +1,12 @@
 <div class="user">
     <div class="user__all">
         <div class="user__all__header">
-            <h3>Les criminals</h3>
+            <h3>Les victimes</h3>
             <div class="user__all__header__search">
                 <input (keyup)="searchCriminal()" [(ngModel)]="search" class="user__all__header__search__input" type="text" name="search" placeholder="Rechercher par CIN">
                 <!-- <button class="user__all__header__search__btn">Recherche</button> -->
             </div>
-            <a *ngIf="role != 'GP'" class="btn-sm btn btn-secondary" routerLink="/criminal/add">Ajouter</a>
+            <a class="btn-sm btn btn-secondary" routerLink="/victime/add">Ajouter</a>
         </div>
         <div class="user__all__body">
             <table class="table">
@@ -32,9 +32,9 @@
                         <td>{{ ciminal.sexe }}</td>
                         <td>{{ ciminal.dateNaissance }}</td>
                         <td>
-                            <a class="btn btn-sm btn-info" routerLink="/criminal/show/{{ciminal.id}}">Afficher</a>
-                            <a *ngIf="role != 'GP'" class="mx-1 btn btn-sm btn-primary" routerLink="/criminal/edit/{{ciminal.id}}">Modifier</a>
-                            <button *ngIf="role != 'GP'" class="btn btn-sm btn-danger" (click)="delete(ciminal.id)">Supprimer</button>
+                            <a class="btn btn-sm btn-info" routerLink="/victime/show/{{ciminal.id}}">Afficher</a>
+                            <a class="mx-1 btn btn-sm btn-primary" routerLink="/victime/edit/{{ciminal.id}}">Modifier</a>
+                            <button class="btn btn-sm btn-danger" (click)="delete(ciminal.id)">Supprimer</button>
                         </td>
                     </tr>
                 </tbody>

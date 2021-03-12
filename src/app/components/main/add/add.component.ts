@@ -14,7 +14,8 @@ export class AddComponent implements OnInit {
   constructor(private userService: UserService, private account:AccountService, private router:Router) { }
   
   user:User={
-    name:"",
+    adresse:"",
+    nom:"",
     email:"",
     password:"",
     ville:"",

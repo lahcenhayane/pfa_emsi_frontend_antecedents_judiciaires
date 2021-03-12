@@ -15,7 +15,8 @@ export class EditUserComponent implements OnInit {
   id:String="";
   user:User={
     id:"",
-    name:"",
+    nom:"",
+    adresse:"",
     email:"",
     password:"",
     ville:"",

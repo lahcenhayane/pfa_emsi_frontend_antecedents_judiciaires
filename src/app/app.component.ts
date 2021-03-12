@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AccountService } from './services/account.service';
 
 
 @Component({
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'appAngular';
+  
+  constructor(private account:AccountService){
+  }
+
+  token:String=this.account.getToken();
+
+
 }

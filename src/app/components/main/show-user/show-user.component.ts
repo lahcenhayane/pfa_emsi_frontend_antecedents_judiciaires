@@ -14,7 +14,7 @@ export class ShowUserComponent implements OnInit {
 
   id:String="";
   user:User={
-    name:"",
+    adresse:"",
     email:"",
     password:"",
     ville:"",

@@ -1,0 +1,98 @@
+<!-- info Of User -->
+<div class="info">
+    <div class="info__table">
+        <div class="info__table__header">
+            Les informations
+        </div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Numero</th>
+                    <td><span class="point">: </span>{{ infoCrime.numero }}</td>
+                </tr>
+                <tr>
+                    <th>Type Crime</th>
+                    <td><span class="point">: </span>{{ infoCrime.typeCrime }}</td>
+                </tr>
+                
+                <tr>
+                    <th>Description Crime</th>
+                    <td><span class="point">: </span>{{ infoCrime.descriptionFichier }}</td>
+                </tr>
+                <tr>
+                    <th>Date Creation</th>
+                    <td><span class="point">: </span>{{ infoCrime.created_at | date }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="user__all">
+            <div class="user__all__header">
+                <h3>Les criminels</h3>
+                <div class="user__all__header__search">
+                    <input (keyup)="serach()" [(ngModel)]="search" class="user__all__header__search__input" type="text" name="search" placeholder="Recherche par CIN">
+                </div>
+            </div>
+            <div class="user__all__body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>CIN</th>
+                            <th>Nom Prenom</th>
+                            <th>Sexe</th>
+                            <th>Date Naissance</th>
+                            <th>Ville</th>
+                            <th>Telephone</th>
+                            <th>Date Creation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of searchInfoCrime">
+                            <td>{{ row.cin }}</td>
+                            <td>{{ row.nom }} {{ row.prenom }}</td>
+                            <td>{{ row.sexe }}</td>
+                            <td>{{ row.dateNaissance }}</td>
+                            <td>{{ row.ville }}</td>
+                            <td>{{ row.tel }}</td>
+                            <td>{{ row.created_at | date }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="user__all">
+            <div class="user__all__header">
+                <h3>Les victimes</h3>
+                <div class="user__all__header__search">
+                    <input (keyup)="searchVictime()" [(ngModel)]="searchV" class="user__all__header__search__input" type="text" name="search" placeholder="Recherche par CIN">
+                </div>
+            </div>
+            <div class="user__all__body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>CIN</th>
+                            <th>Nom Prenom</th>
+                            <th>Sexe</th>
+                            <th>Date Naissance</th>
+                            <th>Ville</th>
+                            <th>Telephone</th>
+                            <th>Date Creation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of searchVictimes">
+                            <td>{{ row.cin }}</td>
+                            <td>{{ row.nom }} {{ row.prenom }}</td>
+                            <td>{{ row.sexe }}</td>
+                            <td>{{ row.dateNaissance }}</td>
+                            <td>{{ row.ville }}</td>
+                            <td>{{ row.tel }}</td>
+                            <td>{{ row.created_at | date }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

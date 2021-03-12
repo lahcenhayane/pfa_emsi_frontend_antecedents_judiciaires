@@ -2,7 +2,7 @@
     <div class="home__row">
         <div class="home__row__item bg__one">
             <div class="home__row__item__image">
-                <img src="../../../../assets/images/logos/Royal_Moroccan_Gendarmerie.png" alt="Logo">
+                <img src="assets/images/logos/Royal_Moroccan_Gendarmerie.png" alt="Logo">
             </div>
             <div class="home__row__item__body">
                 <p><a href="#">Service GP</a></p>
@@ -11,7 +11,7 @@
         </div>
         <div class="home__row__item bg__two">
             <div class="home__row__item__image">
-                <img src="../../../../assets/images/logos/tribunale-png-8.png" alt="Logo">
+                <img src="assets/images/logos/tribunale-png-8.png" alt="Logo">
             </div>
             <div class="home__row__item__body">
                 <p><a href="#">Service Tribunale </a></p>
@@ -20,16 +20,16 @@
         </div>
         <div class="home__row__item bg__one">
             <div class="home__row__item__image">
-                <img src="../../../../assets/images/logos/criminal.png" alt="Logo">
+                <img src="assets/images/logos/criminal.png" alt="Logo">
             </div>
             <div class="home__row__item__body">
-                <p><a href="#">Service Criminal</a></p>
+                <p><a routerLink="/criminal">Service Criminal</a></p>
                 <p>{{countCriminal}}</p>
             </div>
         </div>
         <div class="home__row__item bg__two">
             <div class="home__row__item__image">
-                <img src="../../../../assets/images/logos/users.png" alt="Logo">
+                <img src="assets/images/logos/users.png" alt="Logo">
             </div>
             <div class="home__row__item__body">
                 <p><a routerLink="/users">Gestion Utilisateurs</a></p>
@@ -47,8 +47,12 @@
             <table class="table">
                 <tbody>
                     <tr>
-                        <th>Name</th>
-                        <td><span class="point">:</span>{{user.name}}</td>
+                        <th>Nom</th>
+                        <td><span class="point">:</span>{{user.nom}}</td>
+                    </tr>
+                    <tr>
+                        <th>Adresse</th>
+                        <td><span class="point">:</span>{{user.adresse}}</td>
                     </tr>
                     <tr>
                         <th>Email</th>

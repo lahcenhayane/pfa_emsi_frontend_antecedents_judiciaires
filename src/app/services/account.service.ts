@@ -11,7 +11,7 @@ export class AccountService {
     localStorage.setItem('userToken', data.userToken);
     localStorage.setItem('userID', data.userID);
     localStorage.setItem('userRole', data.userRole);
-    localStorage.setItem('userName', data.userName);
+    localStorage.setItem('userVille', data.userVille);
   }
   getToken(){
     return localStorage.getItem('userToken');
@@ -23,12 +23,12 @@ export class AccountService {
     return localStorage.getItem('userRole');
   }
   getName(){
-    return localStorage.getItem('userName');
+    return localStorage.getItem('userVille');
   }
   removeLocalStorage(){
     localStorage.removeItem('userToken');
     localStorage.removeItem('userID');
     localStorage.removeItem('userRole');
-    localStorage.removeItem('userName');
+    localStorage.removeItem('userVille');
   }
 }

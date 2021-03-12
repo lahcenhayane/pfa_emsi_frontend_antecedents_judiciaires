@@ -9,14 +9,17 @@
             <div class="sideBar__menu__item">
                 <a routerLink="/home">Accuiel</a>
             </div>
-            <div class="sideBar__menu__item">
-                <a href="/users">Gestion d'utilisateur</a>
+            <div class="sideBar__menu__item" *ngIf="role == 'Admin'">
+                <a href="/users">Gestion Utilisateur</a>
             </div>
             <div class="sideBar__menu__item">
-                <a href="/criminal">Gection Criminal</a>
+                <a href="/criminal" *ngIf="role=='Tribunal' || role=='GP'">Gection Criminel</a>
             </div>
             <div class="sideBar__menu__item">
-                <a href="/crimes">Gection Crime</a>
+                <a href="/victime" *ngIf="role == 'Tribunal'">Gection Victime</a>
+            </div>
+            <div class="sideBar__menu__item">
+                <a href="/crime" *ngIf="role == 'Tribunal'">Gection Crime</a>
             </div>
         </div>
     </div>
@@ -31,9 +34,6 @@
                 </div>
             </div>
             <div class="content__navbar__right">
-                <div class="content__navbar__item">
-                    <button class="btn" (click)="notification()">Notification<span>(10)</span></button>
-                </div>
                 <div class="content__navbar__item">
                     <button class="btn" (click)="logout()">Logout</button>
                 </div>

@@ -1,9 +1,9 @@
 <div class="add__user">
     <div class="crime__fichier">
         <div class="crime__fichier__title">
-            Ajouter l'utilisateur.
+            Ajouter Criminel.
         </div>
-        <div class="crime__fichier__header py-5">
+        <div class="crime__fichier__header">
             <!-- <div class="crime__fichier__header__two">
                 <div class="form-group imgg">
                     <img class="logo_user_default" [src]="urlImage" alt="Logo User">
@@ -51,6 +51,12 @@
                     <input class="form-check-input" [(ngModel)]="criminals.sexe" id="checkFemme" type="radio" name="sexe" value="Femme">
                     <label class="form-check-label" for="checkFemme">Femme</label>
                 </div>
+            </div>
+        </div>
+        <div class="mx-3 mt-2">
+            <div class="form-group">
+                <label for="dateNaissance">Adresse</label>
+                <textarea [(ngModel)]="criminals.addresse" class="form-control" ></textArea>
             </div>
         </div>
         <div class="crime__fichier__header__footer">

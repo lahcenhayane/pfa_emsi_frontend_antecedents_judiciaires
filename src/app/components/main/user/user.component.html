@@ -12,7 +12,8 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Nom Prenom</th>
+                        <th>Nom</th>
+                        <th>Adresse</th>
                         <th>Email</th>
                         <th>Ville</th>
                         <th>Telephone</th>
@@ -22,7 +23,8 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let user of usersSearch">
-                        <td>{{ user.name }}</td>
+                        <td>{{ user.nom }}</td>
+                        <td>{{ user.adresse }}</td>
                         <td>{{ user.email }}</td>
                         <td>{{ user.ville }}</td>
                         <td>{{ user.tel }}</td>

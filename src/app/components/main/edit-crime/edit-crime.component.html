@@ -1,0 +1,117 @@
+<div class="add__user">
+    <div class="crime__fichier">
+        <div class="crime__fichier__title">
+            Ajouter une crime.
+        </div>
+        <div class="crime__fichier__header__one">
+
+            <div class="crime__fichier__header">
+                <div class="crime__fichier__header__two">
+                    <div class="form-group">
+                        <label for="name">Numero</label>
+                        <input type="text" disabled name="numero" class="form-control" value="{{crime.numero}}">
+                    </div>
+                </div>
+                <div class="crime__fichier__header__two">
+                    <div class="form-group">
+                        <label for="Categorie">Categorie</label>
+                        <input [(ngModel)]="crime.typeCrime" type="text" name="Categorie" class="form-control" placeholder="Type Crime" aria-describedby="helpId">
+                    </div>
+                </div>
+                <div class="crime__fichier__header__two">
+                    <div class="form-group">
+                        <label for="lieu">Lieu</label>
+                        <input [(ngModel)]="crime.lieu" type="text" name="lieu" class="form-control" placeholder="Type Crime" aria-describedby="helpId">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mx-3">
+                <label for="descriptionFichier">Description Fichier</label>
+                <textarea [(ngModel)]="crime.descriptionFichier" name="descriptionFichier" class="form-control"></textarea>
+            </div>
+            <div class="crime__fichier__header">
+                <div class="crime__fichier__header__two cadre">
+                    <div class="user__all__header">
+                        <h3>Les criminels</h3>
+                        <div class="user__all__header__search">
+                            <!-- <input (keyup)="searchCriminal()" [(ngModel)]="search" class="user__all__header__search__input" type="text" name="search" placeholder="Recherche par email"> -->
+                        </div>
+                        <a class="btn-sm btn btn-secondary"  routerLink="/criminal/add">Ajouter</a>
+                    </div>
+                    <div class="user__all__body tableCrim">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>CIN</th>
+                                    <th>Non Prenom</th>
+                                    <th>Ville</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr *ngFor="let row of criminals">
+                                    <td>{{ row.cin }}</td>
+                                    <td>{{ row.nom }} {{ row.prenom }}</td>
+                                    <td>{{ row.ville }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            
+                <div class="crime__fichier__header__two cadre">
+                    <div class="user__all__header">
+                        <h3>Les victimes</h3>
+                        <div class="user__all__header__search">
+                            <!-- <input (keyup)="searchCriminal()" [(ngModel)]="search" class="user__all__header__search__input" type="text" name="search" placeholder="Recherche par email"> -->
+                        </div>
+                        <a class="btn-sm btn btn-secondary"  routerLink="/criminal/add">Ajouter</a>
+                    </div>
+                    <div class="user__all__body tableCrim">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>CIN</th>
+                                    <th>Non Prenom</th>
+                                    <th>Ville</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr *ngFor="let row of victimes">
+                                    <td>{{ row.cin }}</td>
+                                    <td>{{ row.nom }} {{ row.prenom }}</td>
+                                    <td>{{ row.ville }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="crime__fichier__header">
+                <div class="crime__fichier__header__two">
+                    <div class="form-group">
+                        <label for="name">Criminels :</label>
+                        <input (keyup)="searchCriminels()" [(ngModel)]="search" class="user__all__header__search__input" type="text" name="search" placeholder="Recherche par CIN">
+                        <select [(ngModel)]="crime.criminals" multiple class="form-control">
+                            <option *ngFor="let row of searchCriminals" value="{{row.id}}">CIN :{{ row.cin }} |Nom Prenom :{{ row.nom }} {{ row.prenom }} | Ville :{{ row.ville }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="crime__fichier__header__two">
+                    <div class="form-group">
+                        <label for="name">Victimes :</label>
+                        <input (keyup)="searchVictime()" [(ngModel)]="searchV" class="user__all__header__search__input" type="text" name="search" placeholder="Recherche par CIN">
+                        <select [(ngModel)]="crime.victimes" class="form-control" multiple>
+                            <option *ngFor="let row of searchVictimes" value="{{row.id}}">CIN :{{ row.cin }} |Nom Prenom :{{ row.nom }} {{ row.prenom }} | Ville :{{ row.ville }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        <div class="crime__fichier__header__footer">
+            <button type="button" class="btn btn-secondary"  (click)="modifier()">Modifier</button>
+        </div>
+    </div>
+</div>
